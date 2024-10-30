@@ -11,7 +11,17 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+size_t	ft_strlen1(const char *s)
+{
+	int	i;
 
+	i = 0;
+	if(!s)
+		return 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
@@ -21,8 +31,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 
 	i = 0;
-	lens1 = ft_strlen(s1);
-	lens2 = ft_strlen(s2);
+	lens1 = ft_strlen1(s1);
+	lens2 = ft_strlen1(s2);
 	strlen = lens1 + lens2;
 	str = (char *)malloc((strlen + 1) * sizeof(char));
 	if (!str)
